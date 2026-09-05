@@ -4,7 +4,9 @@ Model Context Protocol (MCP) server for the [OilFlow Network](https://oilflow.us
 
 It turns OilFlow into a set of tools that any MCP-compatible AI agent (Claude Desktop, Claude Code, Cursor, or your own agent built on the MCP SDK) can call directly.
 
-**Three tools need no API key at all** (new in 0.3.0; the server used to refuse to start without one):
+**Three tools need no API key at all** (since 0.3.0; the server used to refuse to start without one). 0.3.1 adds the MCP registry name `io.github.rafaemush/oilflow-mcp-server` and points the package at its public repository; no behaviour change.
+
+Source of truth: this package is developed inside the OilFlow monorepo and mirrored to [github.com/rafaemush/oilflow-mcp-server](https://github.com/rafaemush/oilflow-mcp-server) on every release. Issues go there.
 
 - ⚡ **`predeal_preview`**: the full pre-deal clearance verdict on a proposed deal, free, 5 per day. Returns a `receipt_id` + `verify_url`.
 - 🧾 **`verify_receipt`**: check an OilFlow screening receipt someone handed you, and see exactly what it did and did not cover.

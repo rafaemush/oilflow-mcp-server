@@ -1,6 +1,7 @@
 {
   "name": "@oilflow/mcp-server",
-  "version": "0.3.0",
+  "version": "0.3.1",
+  "mcpName": "io.github.rafaemush/oilflow-mcp-server",
   "description": "Verifiable compliance evidence for agent decisions. MCP server for the OilFlow Network APIs: screen counterparties against 8 sanctions lists and a first-party fraud-cluster registry, check trade tradability across 235 jurisdictions, validate letters of credit (UCP 600), traverse UBO graphs, and run pre-deal clearance checks. Every verdict ships with its coverage, its evidence gaps, and a signature your auditor can verify without trusting us. Three tools work with no API key.",
   "license": "Apache-2.0",
   "type": "module",
@@ -18,10 +19,10 @@
   "homepage": "https://oilflow.us/api-docs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oilflow-network/mcp-server.git"
+    "url": "git+https://github.com/rafaemush/oilflow-mcp-server.git"
   },
   "bugs": {
-    "url": "https://github.com/oilflow-network/mcp-server/issues"
+    "url": "https://github.com/rafaemush/oilflow-mcp-server/issues"
   },
   "scripts": {
     "build": "tsc",

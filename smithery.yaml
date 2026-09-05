@@ -1,0 +1,16 @@
+# Smithery runtime config for @oilflow/mcp-server (stdio). The three keyless
+# tools work without OILFLOW_API_KEY; set it to unlock the rest.
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      oilflowApiKey:
+        type: string
+        description: "Optional OilFlow API key (oilflow_...). Unlocks the keyed tools; the keyless tools work without it."
+  commandFunction: |-
+    (config) => ({
+      command: "node",
+      args: ["dist/index.js"],
+      env: config.oilflowApiKey ? { OILFLOW_API_KEY: config.oilflowApiKey } : {}
+    })
