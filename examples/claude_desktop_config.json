@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "oilflow": {
+      "command": "npx",
+      "args": ["-y", "@oilflow/mcp-server"],
+      "env": {
+        "OILFLOW_API_KEY": "oilflow_replace_with_your_real_key"
+      }
+    }
+  }
+}

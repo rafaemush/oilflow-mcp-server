@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.rafaemush/oilflow-mcp-server",
+  "title": "OilFlow Compliance",
+  "description": "Verifiable compliance evidence for agent decisions: screen counterparties against 8 sanctions lists and a first-party fraud-cluster registry, check tradability across 235 jurisdictions, run pre-deal checks. Every verdict states its coverage and evidence gaps; receipts carry a verifiable signature. Three tools need no API key. PEP screening is not offered.",
+  "version": "0.3.0",
+  "websiteUrl": "https://oilflow.us/mcp",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@oilflow/mcp-server",
+      "version": "0.3.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "OILFLOW_API_KEY",
+          "description": "Optional. Unlocks the keyed tools; the three keyless tools work without it.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    { "type": "streamable-http", "url": "https://oilflow.us/api/mcp" }
+  ]
+}

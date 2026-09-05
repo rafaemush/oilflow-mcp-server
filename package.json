@@ -1,0 +1,57 @@
+{
+  "name": "@oilflow/mcp-server",
+  "version": "0.3.0",
+  "description": "Verifiable compliance evidence for agent decisions. MCP server for the OilFlow Network APIs: screen counterparties against 8 sanctions lists and a first-party fraud-cluster registry, check trade tradability across 235 jurisdictions, validate letters of credit (UCP 600), traverse UBO graphs, and run pre-deal clearance checks. Every verdict ships with its coverage, its evidence gaps, and a signature your auditor can verify without trusting us. Three tools work with no API key.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "oilflow-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://oilflow.us/api-docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oilflow-network/mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oilflow-network/mcp-server/issues"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "oilflow",
+    "compliance",
+    "kyc",
+    "sanctions",
+    "aml",
+    "ubo",
+    "ucp-600",
+    "regulatory",
+    "trade-finance",
+    "claude",
+    "ai-agents"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  }
+}
