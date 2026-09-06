@@ -23,6 +23,36 @@ With a key:
 
 Every tool is a thin passthrough to the OilFlow API. Results are decision-support for a compliance professional, **not legal advice**; cluster `suspected` rows are publicly reported leads, not OilFlow-confirmed fraud.
 
+## What this adds over a name-vs-list sanctions screen
+
+Several MCP servers match a name against OFAC, EU, UK and UN lists, and some do it well. If a list
+match is all you need, use one of those. This server exists for the questions a list match does not
+answer in physical-commodity trade. Every row names the tool that answers it and the key tier that
+tool needs, so nothing here is a claim you cannot call.
+
+| Question an agent gets asked | A name-vs-list screen | This server |
+|---|---|---|
+| Is this name on a sanctions list? | Yes | Yes. `kyc_screen` checks 8 lists (OFAC SDN, OFAC Consolidated, UN, EU, UK HMT, Canada SEMA, Australia DFAT, Swiss SECO) and names the list per hit. Production key. |
+| Is this counterparty in a known commodity-trade fraud cluster (mandate chains, impersonated majors)? | Out of scope | `cluster_check` / `clusters_list` query a first-party registry built from investigated cases. A `suspected` row is a publicly reported lead, not OilFlow-confirmed fraud. Sandbox key. |
+| Can this product legally move from country A to country B? | Out of scope | `regulatory_check` answers from a 235-jurisdiction tradability matrix. Sandbox key. |
+| Is a designated party sitting behind the owner chain? | Out of scope: it screens the name it was handed | `ubo_screen` applies the OFAC 50-percent rule to derived ownership. Coverage is partial and every result says so: there is no functioning US domestic beneficial-ownership registry after March 2025. Production key. |
+| Should my principal proceed, and what is still unknown? | Out of scope | `predeal_preview` returns a clearance probability, a verdict tier, named blockers, `evidence_gaps`, and `verdict_source` (deterministic rules or model synthesis). No key, 5 per day. |
+| Someone handed my principal a compliance receipt. Is it genuine, and what did it actually cover? | Out of scope | `verify_receipt` returns the receipt, its canonical payload and an HMAC-SHA256 signature. HMAC is symmetric, so the signature proves OilFlow issued that receipt unaltered and OilFlow re-verifies it at the public endpoint. It is not a check anyone can run without us, and the tool says so. No key. |
+| Politically exposed persons (PEP)? | Some do | **Not offered.** The `peps` dataset is not indexed, coverage is `sanctions_only`, and every tool reports that. A politically exposed person who is not also designated is not flagged. |
+
+No SOC 2 report exists. Every output is decision-support for a compliance professional: not a
+clearance, and not legal advice.
+
+## Examples
+
+Runnable agent integrations live in [`examples/`](examples/):
+
+- [`examples/claude_agent_sdk.py`](examples/claude_agent_sdk.py) drives the remote HTTP endpoint from a Claude Agent SDK agent.
+- [`examples/langchain_agent.py`](examples/langchain_agent.py) does the same from LangChain via `langchain-mcp-adapters`.
+- [`examples/claude_desktop_config.json`](examples/claude_desktop_config.json) is the stdio config for Claude Desktop.
+
+[`examples/README.md`](examples/README.md) lists what each one needs.
+
 ## Install
 
 ```bash

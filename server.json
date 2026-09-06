@@ -7,14 +7,14 @@
     "url": "https://github.com/rafaemush/oilflow-mcp-server",
     "source": "github"
   },
-  "version": "0.3.2",
+  "version": "0.3.3",
   "websiteUrl": "https://oilflow.us/mcp",
   "packages": [
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "@oilflow/mcp-server",
-      "version": "0.3.2",
+      "version": "0.3.3",
       "transport": {
         "type": "stdio"
       },
