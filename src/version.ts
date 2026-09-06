@@ -13,4 +13,4 @@
  * everything in the package that needs the number, so it cannot drift from the
  * server it identifies.
  */
-export const SERVER_VERSION = "0.3.1";
+export const SERVER_VERSION = "0.3.2";

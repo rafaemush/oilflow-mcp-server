@@ -2,19 +2,19 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.rafaemush/oilflow-mcp-server",
   "title": "OilFlow Compliance",
-  "description": "Verifiable compliance evidence for agent decisions: screen counterparties against 8 sanctions lists and a first-party fraud-cluster registry, check tradability across 235 jurisdictions, run pre-deal checks. Every verdict states its coverage and evidence gaps; receipts carry a verifiable signature. Three tools need no API key. PEP screening is not offered.",
+  "description": "Verifiable compliance evidence for agent decisions. MCP server for the OilFlow Network APIs: screen counterparties against 8 sanctions lists and a first-party fraud-cluster registry, check trade tradability across 235 jurisdictions, validate letters of credit (UCP 600), traverse UBO graphs, and run pre-deal clearance checks. Every verdict ships with its coverage, its evidence gaps, and an HMAC-SHA256-signed receipt: the signature proves OilFlow issued the receipt unaltered, and OilFlow re-verifies it at /api/public/verify/{id}. Three tools work with no API key.",
   "repository": {
     "url": "https://github.com/rafaemush/oilflow-mcp-server",
     "source": "github"
   },
-  "version": "0.3.1",
+  "version": "0.3.2",
   "websiteUrl": "https://oilflow.us/mcp",
   "packages": [
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "@oilflow/mcp-server",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "transport": {
         "type": "stdio"
       },
